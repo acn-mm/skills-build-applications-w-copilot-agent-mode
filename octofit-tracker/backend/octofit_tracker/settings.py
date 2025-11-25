@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'dj_rest_auth',
+    'octofit_tracker',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +68,7 @@ WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'octofit_tracker',
+        'NAME': 'octofit_db',
         'CLIENT': {
             'host': 'localhost',
             'port': 27017,
@@ -115,10 +116,10 @@ REST_FRAMEWORK = {
 }
 
 # CORS configuration
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
-]
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ['*']
+CORS_ALLOW_METHODS = ['*']
 
 # Django-allauth configuration
 AUTHENTICATION_BACKENDS = [
