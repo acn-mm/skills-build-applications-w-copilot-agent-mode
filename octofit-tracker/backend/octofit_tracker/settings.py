@@ -65,6 +65,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'octofit_tracker.wsgi.application'
 
 # Database
+DJONGO_USED = True  # Indicates Djongo is configured as the DB engine
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
